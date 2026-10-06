@@ -1,1 +1,319 @@
+AI-Based Smart Energy Management System Using ESP32 + Full Stack Development
 
+📌 Project Overview
+
+The AI-Based Smart Energy Management System is an IoT and AI-powered system designed to monitor, analyze, and manage electrical energy consumption efficiently.
+
+The system uses an ESP32 to collect real-time data from electrical sensors and sends the data to a full-stack web application. AI techniques are used to analyze energy usage, detect abnormal consumption, and provide recommendations for reducing energy wastage.
+
+🎯 Objectives
+
+- Monitor electricity consumption in real time.
+- Collect energy data using ESP32 and sensors.
+- Display energy usage through a web dashboard.
+- Detect abnormal or excessive power consumption.
+- Use AI to predict energy consumption.
+- Provide smart energy-saving recommendations.
+- Help users reduce unnecessary electricity usage.
+
+✨ Key Features
+
+🔌 IoT Monitoring
+
+- ESP32-based energy monitoring.
+- Real-time sensor data collection.
+- Wi-Fi connectivity.
+- Voltage, current, power, and energy monitoring.
+
+🤖 AI Features
+
+- Energy consumption prediction.
+- Abnormal usage detection.
+- Usage pattern analysis.
+- Smart energy-saving recommendations.
+
+🌐 Full Stack Web Application
+
+- User-friendly dashboard.
+- Real-time energy monitoring.
+- Historical consumption graphs.
+- Daily, weekly, and monthly reports.
+- Device monitoring and control.
+
+⚡ Smart Control
+
+The system can optionally control connected appliances using relays based on:
+
+- Energy consumption limits.
+- User-defined schedules.
+- AI recommendations.
+
+🏗️ System Architecture
+
+         ┌─────────────────────┐
+         │ Electrical Appliances│
+         └──────────┬──────────┘
+                    │
+                    ▼
+         ┌─────────────────────┐
+         │ Sensors / Energy    │
+         │ Measurement Module  │
+         └──────────┬──────────┘
+                    │
+                    ▼
+              ┌───────────┐
+              │   ESP32   │
+              └─────┬─────┘
+                    │ Wi-Fi
+                    ▼
+         ┌─────────────────────┐
+         │ Backend / REST API  │
+         └──────────┬──────────┘
+                    │
+          ┌─────────┴─────────┐
+          ▼                   ▼
+   ┌──────────────┐    ┌──────────────┐
+   │   Database   │    │  AI/ML Model │
+   └──────────────┘    └──────┬───────┘
+                              │
+                              ▼
+                    ┌──────────────────┐
+                    │ Web Dashboard    │
+                    │ & User Interface │
+                    └──────────────────┘
+
+🛠️ Technologies Used
+
+Hardware
+
+- ESP32
+- Current Sensor
+- Voltage Sensor
+- Relay Module
+- Electrical Loads
+- Connecting Wires
+- Power Supply
+
+Frontend
+
+- HTML
+- CSS
+- JavaScript
+- React.js (optional)
+
+Backend
+
+- Node.js
+- Express.js
+- REST API
+
+Database
+
+- MongoDB
+
+AI/ML
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Machine Learning prediction models
+
+Communication
+
+- Wi-Fi
+- HTTP/REST API
+- MQTT (optional)
+
+📂 Project Structure
+
+AI-Smart-Energy-Management/
+│
+├── esp32/
+│   ├── energy_monitor.ino
+│   └── sensor_config.h
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── package.json
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   ├── models/
+│   ├── server.js
+│   └── package.json
+│
+├── ai-model/
+│   ├── model.py
+│   ├── train.py
+│   └── requirements.txt
+│
+├── database/
+│   └── schema.js
+│
+├── README.md
+└── .gitignore
+
+🔄 Working Process
+
+1. Sensors measure electrical parameters.
+2. ESP32 reads the sensor values.
+3. ESP32 processes the readings and connects to Wi-Fi.
+4. The data is sent to the backend using an API.
+5. The backend stores the data in MongoDB.
+6. AI analyzes historical and real-time consumption data.
+7. The AI model predicts future energy consumption.
+8. The dashboard displays energy information using charts and statistics.
+9. The system provides energy-saving recommendations.
+10. Optional relays can automatically control appliances.
+
+🤖 AI Module
+
+The AI module can analyze parameters such as:
+
+Voltage
+Current
+Power
+Energy Consumption
+Time
+Day
+Previous Usage
+
+The model can be trained to predict:
+
+Future Energy Consumption
+Peak Usage Periods
+Abnormal Consumption
+
+Example:
+
+Current Usage: 2.8 kWh
+Predicted Usage: 3.5 kWh
+
+Recommendation:
+Reduce usage of high-power appliances during peak hours.
+
+🌐 Dashboard
+
+The web dashboard can contain:
+
+- ⚡ Current Power Consumption
+- 🔋 Total Energy Used
+- 📊 Daily Consumption
+- 📈 Weekly/Monthly Trends
+- 🤖 AI Predictions
+- 🚨 Abnormal Usage Alerts
+- 💡 Energy-Saving Recommendations
+- 🔌 Appliance Status
+
+🔗 API Example
+
+Send Energy Data
+
+POST /api/energy
+
+Example JSON:
+
+{
+  "voltage": 230,
+  "current": 2.4,
+  "power": 552,
+  "energy": 2.8,
+  "timestamp": "2026-10-06T12:00:00Z"
+}
+
+Get Energy Data
+
+GET /api/energy
+
+🚀 Installation
+
+1. Clone the Repository
+
+git clone https://github.com/yourusername/AI-Smart-Energy-Management.git
+cd AI-Smart-Energy-Management
+
+2. Install Backend
+
+cd backend
+npm install
+npm start
+
+3. Install Frontend
+
+cd frontend
+npm install
+npm run dev
+
+4. Install AI Dependencies
+
+cd ai-model
+pip install -r requirements.txt
+
+5. Configure ESP32
+
+Open the ESP32 Arduino code and configure:
+
+const char* WIFI_SSID = "YOUR_WIFI";
+const char* WIFI_PASSWORD = "YOUR_PASSWORD";
+const char* SERVER_URL = "YOUR_API_URL";
+
+Upload the program to the ESP32 using Arduino IDE.
+
+📊 Expected Output
+
+The system provides a dashboard similar to:
+
+========================================
+       SMART ENERGY DASHBOARD
+========================================
+
+Current Power       : 552 W
+Today's Energy      : 2.8 kWh
+Monthly Energy      : 84.6 kWh
+
+AI Prediction       : 3.5 kWh
+Usage Status        : NORMAL
+
+Recommendation:
+Reduce high-power appliance usage
+during peak consumption hours.
+========================================
+
+🔮 Future Enhancements
+
+- Voice-controlled energy management.
+- Mobile application.
+- Advanced AI-based load forecasting.
+- Automatic appliance scheduling.
+- Solar power integration.
+- Smart meter integration.
+- Cloud deployment.
+- Personalized energy-saving plans.
+- Carbon-emission monitoring.
+
+🌱 SDG Relevance
+
+This project supports:
+
+SDG 7 – Affordable and Clean Energy
+
+It promotes efficient energy consumption and helps reduce energy wastage through smart monitoring and AI-based recommendations.
+
+It can also contribute to:
+
+- SDG 9 – Industry, Innovation and Infrastructure
+- SDG 12 – Responsible Consumption and Production
+- SDG 13 – Climate Action
+
+👥 Team
+
+Project: AI-Based Smart Energy Management System Using ESP32 + Full Stack Development
+
+Domain: IoT + Artificial Intelligence + Full Stack Development
+
+📜 License
+
+This project is developed for educational and academic purposes.
