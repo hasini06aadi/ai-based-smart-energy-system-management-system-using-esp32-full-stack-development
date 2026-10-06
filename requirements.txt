@@ -1,0 +1,11 @@
+streamlit>=1.37
+pandas>=2.2
+numpy>=1.26
+plotly>=5.22
+langchain>=0.3
+langchain-core>=0.3
+langchain-community>=0.3
+langchain-ollama>=0.2
+requests>=2.32
+pyserial>=3.5
+statsmodels>=0.14
